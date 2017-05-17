@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menubar and Sessions</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+    <% if(currentUser === undefined) { %>
+
+      <p>You're not logged in yet.</p>
+      <a href="/login">Login</a>
+    <% } else { %>
+      <p>You're already logged in.</p>
+      <a href="/dashboard">Dashboard</a>
+    <% }
+    %>
+  </body>
+</html>
