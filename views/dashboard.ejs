@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Selamat datang <%= username %> </title>
+  </head>
+  <body>
+  <h1>Dashboard for role <%= role %></h1>
+  <% if (role == "admin") {%>
+    <%include ./partials/add_user.ejs %>
+  <% } else if (role == "supervisor"){ %>
+    <p>Masuk fungsi supervisor</p>
+  <% } %>
+  </body>
+</html>
