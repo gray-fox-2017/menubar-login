@@ -1,0 +1,28 @@
+<%- include ./partials/header %>
+  <body>
+    <table>
+      <thead>
+        <th>
+          <td>ID</td>
+          <td>Username</td>
+          <td>Password</td>
+          <td>Email</td>
+          <td>Role</td>
+        </th>
+      </thead>
+      <tbody>
+        <% users.forEach(u=>{ %>        
+        <tr>
+          <td><%= u.id %></td>
+          <td><%= u.username %></td>
+          <td><%= u.password %></td>
+          <td><%= u.email %></td>
+          <td><%= u.role %></td>
+          <td><a href="/users/delete/<%= u.id %>">Delete</a></td>
+          <td><a href="/">Back</a></td>
+        </tr>
+    <%  }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

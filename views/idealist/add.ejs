@@ -1,0 +1,12 @@
+<%- include ../partials/header %>
+  <body>
+    <h1> Add Idea </h1>
+    <form action="/idea/addidea/<%= username %>" method="post">  
+      <h4> Idea </h4>
+      <input type="text" name="idea" placeholder="Please input your idea here">
+      <h4> Note </h4>
+      <input type="text" name="notes" placeholder="Please input note (optional)">
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

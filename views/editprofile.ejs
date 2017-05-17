@@ -1,0 +1,17 @@
+<%- include ./partials/header %>
+  <body>
+    <form action="/users/update/<%= user.id %>" method="post">
+      <h3> Username </h3>
+      <input type="text" name="username" value="<%= user.username %>">
+      <h3> Password </h3>
+      <input type="text" name="password" value="<%= user.password %>">
+      <h3> Email </h3>
+      <input type="text" name="email" value="<%= user.email %>">
+      <% if(user.role === 'Admin'){ %>
+      <h3> Role </h3>
+      <input type="text" name="role" value="<%= user.role %>">
+    <%  } %>
+    <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
