@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <br/>
+    <br/>
+    <% if (!currUser) { %>
+    <form action="/doLogin" method="post">
+      <label for="username">Username: 
+        <input type="text" name="username" placeholder:"username">
+      </label>
+      <br/>
+      <label for="password">Password: 
+        <input type="text" name="password" placeholder:"username">
+      </label>
+      <br/>
+      <button type="submit">Login</button>
+    </form>
+    <% } else {%>
+    <p>Congratulation, you're logged in!</p>
+    <a href="/doLogout" class="btn">LogOut</a>
+    <% } %>
+  </body>
+</html>
