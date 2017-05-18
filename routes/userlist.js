@@ -6,11 +6,13 @@ const db = require('../models');
 
 router.get('/', function(req, res, next) {
   let user = req.session.user
-  if(user.role=='admin'){
-    db.User.findAll()
-    .then(users=>{
-      res.render('userlist', { title: 'ADK Site',users:users});
-    })
+  if(user){
+    if(user.role=='admin'){
+      db.User.findAll()
+      .then(users=>{
+        res.render('userlist', { title: 'ADK Site',users:users});
+      })
+    }
   } else {
     res.redirect('/')
   }
