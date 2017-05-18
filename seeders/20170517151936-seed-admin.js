@@ -16,7 +16,9 @@ module.exports = {
       username: 'aldyandika',
       email: 'aldy.andika@gmail.com',
       password:'123',
-      role:'admin'
+      role:'admin',
+      createdAt: new Date(),
+      updatedAt: new Date()
     }], {});
   },
 
