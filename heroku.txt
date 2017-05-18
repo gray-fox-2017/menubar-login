@@ -1,0 +1,2 @@
+https://kongkowidea.herokuapp.com/
+https://git.heroku.com/kongkowidea.git

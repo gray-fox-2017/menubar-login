@@ -17,14 +17,14 @@ router.get('/add/:username',(req,res,send)=>{
   res.render(`idealist/add`,{username: req.params.username})
 })
 
-router.get('/edit:id',(req,res,send)=>{
+router.get('/edit/:id',(req,res,send)=>{
   db.Idea.findOne({
     where:{
       id:req.params.id
     }
   })
   .then(data=>{
-    res.render('/idealist/edit', {idea:data})
+    res.render('idealist/edit', {idea:data})
   })
 })
 
