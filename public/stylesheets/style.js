@@ -37,6 +37,21 @@ export default StyleSheet.create({
         "paddingLeft": 15,
         "borderRadius": 5
     },
+    "gray": {
+        "backgroundColor": "#eee"
+    },
+    "navbar-defaultgreen": {
+        "backgroundImage": "-webkit-linear-gradient(top,#0ac986 0,#0ac986 100%)"
+    },
+    "navbar-defaultgreen a": {
+        "color": "#fff !important"
+    },
+    "navbar-defaultgreen navbar-nav>active>a": {
+        "backgroundImage": "linear-gradient(to bottom,#079c68 0,#3ead86 100%)"
+    },
+    "navbar-default navbar-nav>open>a": {
+        "backgroundImage": "linear-gradient(to bottom,#079c68 0,#3ead86 100%)"
+    },
     "*": {
         "boxSizing": "border-box",
         "MozBoxSizing": "border-box",

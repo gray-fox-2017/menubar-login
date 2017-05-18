@@ -24,6 +24,21 @@ a {
   border-radius: 5px;
 }
 
+.gray {
+  background-color: #eee;
+}
+
+.navbar-default.green {
+    background-image: -webkit-linear-gradient(top,#0ac986 0,#0ac986 100%);
+}
+
+.navbar-default.green a {
+  color: #fff !important;
+}
+.navbar-default.green .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a {
+  background-image: linear-gradient(to bottom,#079c68 0,#3ead86 100%);
+}
+
 @import url(http://fonts.googleapis.com/css?family=Vibur);
 * {
   box-sizing: border-box;

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const db = require('../models');
+const util = require('../helpers/menuBar.js');
 
 
 router.get('/', function(req, res) {
@@ -8,7 +9,11 @@ router.get('/', function(req, res) {
 });
 
 router.get('/login', function(req, res) {
-  res.render('login', {error: null})
+  if(!req.session.user){
+    res.render('login', {error: null})
+  } else {
+    res.redirect('/user/dashboard')
+  }
 });
 
 router.post('/login', function(req, res){
@@ -27,8 +32,10 @@ router.post('/login', function(req, res){
 })
 
 router.get('/dashboard', function(req, res) {
+  let currentUser = req.session.user
+  let menus = util.menuBar(currentUser.role)
   if(req.session.user){
-    res.render('dashboard', {currentUser: req.session.user})
+    res.render('dashboard', {currentUser: currentUser, menus: menus})
   } else {
     res.redirect('/')
   }
