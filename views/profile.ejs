@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="">
+      <a href="/logout">Logout</a><br>
+      <%if(user.role=='admin'){%>
+      <a href="/userlist">View list of user</a>
+      <%}%>
+    </div>
+    <h1><%= title %></h1>
+    <p>Your profile page</p>
+    <br>
+    <br>
+    <p>These are your credentials: </p>
+    <p>Username: <%=user.username%></p>
+    <p>Password: <%=user.password%></p>
+    <p>Email: <%=user.email%></p>
+    <p>Role: <%=user.role%></p>
+  </body>
+</html>

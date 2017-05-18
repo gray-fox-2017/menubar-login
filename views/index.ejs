@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <br>
+    <p> It's easy to sign up </p>
+    <form action="/" method="post">
+      <input type="text" name="username" value="" placeholder="username"><br>
+      <input type="email" name="email" value="" placeholder="email"><br>
+      <input type="password" name="password" value="" placeholder="password"><br>
+      <input type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="/login">Sign in here</a></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <%- include ./partial/note.ejs %>
+  </body>
+</html>
