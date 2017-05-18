@@ -8,7 +8,7 @@ router.post('/signup', (req,res,send)=>{
     username: req.body.username,
     password: req.body.password,
     email: req.body.email,
-    role: "Admin"
+    role: "Users"
   })
   .then(data=>{
     res.redirect(`/`)
