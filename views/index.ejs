@@ -2,27 +2,46 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <br/>
-    <br/>
-    <% if (!currUser) { %>
-    <form action="/doLogin" method="post">
-      <label for="username">Username: 
-        <input type="text" name="username" placeholder:"username">
-      </label>
-      <br/>
-      <label for="password">Password: 
-        <input type="text" name="password" placeholder:"username">
-      </label>
-      <br/>
-      <button type="submit">Login</button>
-    </form>
-    <% } else {%>
-    <p>Congratulation, you're logged in!</p>
-    <a href="/doLogout" class="btn">LogOut</a>
-    <% } %>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <nav>
+            <div class="nav-wrapper">
+              <a href="/"class="brand-logo"><%= title %></a>
+              <% if (currUser) { %>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <% menus.forEach(menu => { %>
+                <li><a href="#"><%= menu %></a></li>
+                <% }) %>
+              </ul>
+              <% } %>
+            </div>
+          </nav>
+          <div>
+            <div>
+              <div>
+                <br/>
+                <br/>
+                <% if (!currUser) { %>
+                <form action="/doLogin" method="post">
+                  <label for="username">Username: 
+                    <input type="text" name="username" placeholder:"username">
+                  </label>
+                  <br/>
+                  <label for="password">Password: 
+                    <input type="text" name="password" placeholder:"username">
+                  </label>
+                  <br/>
+                  <button type="submit">Login</button>
+                </form>
+                <% } else {%>
+                <p>Congratulation, you're logged in as <%=role%>!</p>
+                <a href="/doLogout" class="btn">LogOut</a>
+                <% } %>
   </body>
 </html>

@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const helper = require('../helpers/util.js');
 const db = require('../models/');
 
 router.use(function(req,res,next){
-  let loginP = ['doLogin'];
+  let loginP = [''];
   let currRoute = req.path;
   console.log(currRoute);
   if(loginP.includes(currRoute)) {
@@ -15,10 +16,16 @@ router.use(function(req,res,next){
   }
 });
 
-/* GET home page. */
+/* GET home page */
 router.get('/', function(req, res, next) {
   let currUser = req.session.user;
-  res.render('index', {title: 'Menubar & Login', currUser: currUser});
+  if (currUser) {
+  console.log(currUser);
+    res.render('index', {title: 'Menubar & Login', currUser: currUser, menus: currUser.menu, role: currUser.role});
+  }
+  else {
+    res.render('index',{title:'Menubar & Login', currUser: currUser});
+  }
 });
 
 router.get('/doLogout',function(req,res,next) {
@@ -33,7 +40,8 @@ router.post('/doLogin', function(req,res,next) {
     .then (user => {
       if (user.password === password) {
         console.log(user.username);
-        req.session.user = {username:username};
+        req.session.user = {username:username, role:user.role, menu: helper.assignMenu(user.role)};
+        console.log(req.session.user.menu);
         res.redirect('/');
       }
       else {
