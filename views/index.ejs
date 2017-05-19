@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tempat Tebakan</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h3><%= warning %></h3>
+    <h1><%= title %></h1>
+    <p>Log in di mari</p>
+    <form class="" action="/" method="post">
+      <label for="Username">
+        <input type="text" name="username" placeholder="Username">
+      </label>
+
+      <label for="Password">
+        <input type="password" name="password" placeholder="Password">
+      </label>
+      <br>
+      <br>
+      <input type="submit" value="Sign In">
+    </form>
+    <br><br>
+    <p>Belum punya akun?</p>
+    <form class="" action="/register" method="post">
+      <input type="text" name="newUsername" placeholder="username">
+      <br><br>
+      <input type="email" name="newEmail" placeholder="email">
+      <br><br>
+      <input type="password" name="newPassword" placeholder="password">
+      <br><br>
+      <input type="submit" value="Sign Up">
+    </form>
+  </body>
+</html>
