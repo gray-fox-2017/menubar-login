@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <%- include('./partial/head.ejs')%>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <% if (user) { %>
+       anda kan sudah login
+    <% } else {%>
+      <form action='/dologin' method= 'post' >
+        <input type="text" name="username" placeholder="username"/>
+        <input type="password" name="password" placeholder="password"/>
+        <input type="submit" class="btn"/>
+      </post>
+    <%}%>
+  </body>
+  <%- include('./partial/footer.ejs')%>
+</html>

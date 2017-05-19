@@ -1,0 +1,8 @@
+1. MVC
+2. helper
+3. seq
+4. postgre
+
+
+
+login role: admin, spv, cust, dll

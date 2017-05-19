@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menubar</title>
+    <%- include('./partial/head.ejs')%>
+  </head>
+  <body>
+    <h1>Menubar</h1>
+    <header class="page-header cyan darken-4">
+      <div class="container">
+        <div class="row">
+          <% if (!user) { %>
+            <div class="cols">
+              <br/>
+              <a href='/login' style="text-decoration:none;">Login</a>
+            </div>
+          <% } else {
+              user.menu.forEach((mn)=> {
+          %>
+            <div class="cols">
+              <a href='/users/<%=mn%>' style="text-decoration:none;"><%= mn %></a><br/>
+            </div>
+          <%
+              });
+            }%>
+        </div>
+      </div>
+    </header>
+
+  </body>
+  <%- include('./partial/footer.ejs')%>
+</html>
